@@ -69,11 +69,15 @@ end
 post('/brands/:id') do
   @brand = Brand.find(params['id'].to_i)
   store_ids = params['store_ids']
+  link = params['link']
   if store_ids
     store_ids.each() do |store_id|
       store = Store.find(store_id)
       @brand.stores.push(store)
     end
+  end
+  if link
+    @brand.links.create(:link => link)
   end
   redirect('/brands/'.concat(@brand.id().to_s()))
 end

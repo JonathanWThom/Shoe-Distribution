@@ -13,6 +13,15 @@
 
 <h2 style="color:red; text-align: center;"><%= @brand.name() %></h2>
 
+<form action="/brands/<%= @brand.id() %>" method="post">
+  <input id="link" name="link" placeholder="Add Link to Image">
+  <button type="submit" class="btn">Add Image</button>
+</form>
+
+<% @brand.links.each() do |link| %>
+  <img src='<%= link.link %>'>
+<% end %>
+
 <div class="well">
   <% if @brand.stores.any?() %>
     <h3><%= @brand.name() %> can be found at these stores:</h3>
