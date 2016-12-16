@@ -14,4 +14,12 @@ describe('The brand route', {:type => :feature}) do
     click_button('Add Brand')
     expect(page).to have_content('Name can\'t be blank')
   end
+
+  it('will update the brand\'s name') do
+    brand = Brand.create(:name => 'nike')
+    visit("/brands/#{brand.id()}")
+    fill_in('brand_name', :with => 'adidas')
+    click_button('Rebrand')
+    expect(page).to have_content('Adidas')
+  end
 end
