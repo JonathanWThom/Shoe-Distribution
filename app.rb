@@ -76,7 +76,7 @@ post('/brands/:id') do
       @brand.stores.push(store)
     end
   end
-  if link
+  if link != ''
     @brand.links.create(:link => link)
   end
   redirect('/brands/'.concat(@brand.id().to_s()))

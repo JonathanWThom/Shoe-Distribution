@@ -19,5 +19,8 @@ RSpec.configure do |config|
     Brand.all().each() do |brand|
       brand.destroy()
     end
+    Link.all().each() do |link|
+      link.destroy()
+    end
   end
 end

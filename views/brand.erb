@@ -13,14 +13,6 @@
 
 <h2 style="color:red; text-align: center;"><%= @brand.name() %></h2>
 
-<form action="/brands/<%= @brand.id() %>" method="post">
-  <input id="link" name="link" placeholder="Add Link to Image">
-  <button type="submit" class="btn">Add Image</button>
-</form>
-
-<% @brand.links.each() do |link| %>
-  <img src='<%= link.link %>'>
-<% end %>
 
 <div class="well">
   <% if @brand.stores.any?() %>
@@ -57,6 +49,22 @@
       <input id="brand_name" name="brand_name" placeholder="New Brand Name">
     </div>
     <button type="submit" class="btn btn-info">Rebrand</button>
+  </form>
+</div>
+
+<div class="well">
+  <% if @brand.links.any?() %>
+    <h3>Brand Images</h3>
+    <% @brand.links.each() do |link| %>
+      <img style="width: 200px;" src='<%= link.link %>'>
+    <% end %>
+  <% else %>
+    <h3>There are no images yet</h3>
+  <% end %>
+  <h3>Add links to images of this brand</h3>
+  <form action="/brands/<%= @brand.id() %>" method="post">
+    <input id="link" name="link" placeholder="Add Link to Image">
+    <button type="submit" class="btn">Add Image</button>
   </form>
 </div>
 
