@@ -9,6 +9,21 @@
 <h2>Current Stores</h2>
 <ul>
   <% @stores.each() do |store| %>
-    <li><a href='stores/<%= store.id() %>'><%= store.name() %></li>
+    <li><a href='stores/<%= store.id() %>'><%= store.name() %></a></li>
+  <% end %>
+</ul>
+
+<h2>Add a Brand</h2>
+<form action="/brands" method="post">
+  <div class="form-group">
+    <input id='brand_name' name="brand_name" placeholder='Brand Name'>
+  </div>
+  <button type="submit" class='btn btn-info'>Add Brand</button>
+</form>
+
+<h2>Current Brands</h2>
+<ul>
+  <% @brands.each() do |brand| %>
+    <li><a href='brands/<%= brand.id() %>'><%= brand.name() %></li>
   <% end %>
 </ul>
