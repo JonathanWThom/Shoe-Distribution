@@ -55,8 +55,9 @@
 <div class="well">
   <% if @brand.links.any?() %>
     <h3>Brand Images</h3>
+    <h5>Click to view full size</h5>
     <% @brand.links.each() do |link| %>
-      <img style="width: 200px;" src='<%= link.link %>'>
+      <a href='/images/<%= link.id() %>'><img style="width: 200px;" src='<%= link.link %>'></a>
     <% end %>
   <% else %>
     <h3>There are no images yet</h3>

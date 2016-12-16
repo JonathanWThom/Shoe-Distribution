@@ -1,0 +1,19 @@
+<!--I did this here because the css from the stylesheet doesn't apply itself to urls with unique ids-->
+<head>
+  <style>
+    body {
+        background-color: black;
+        text-align: center;
+    }
+  </style>
+</head>
+<a href='/brands/<%= @image.brand_id() %>'>Return to Brand Page</a>
+<br>
+<br>
+<img src='<%= @image.link() %>'>
+<br>
+<br>
+<form action="/images/<%= @image.id() %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" class="btn btn-danger">Delete Image</button>
+</form>

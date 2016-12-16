@@ -95,3 +95,14 @@ delete('/brands/:id') do
   @brand.destroy()
   redirect('/')
 end
+
+get('/images/:id') do
+  @image = Link.find(params['id'].to_i)
+  erb(:image)
+end
+
+delete('/images/:id') do
+  @image = Link.find(params['id'].to_i)
+  @image.destroy()
+  redirect('/brands/'.concat(@image.brand_id().to_s()))
+end
