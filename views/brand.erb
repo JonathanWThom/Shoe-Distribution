@@ -4,7 +4,7 @@
   <h4>Can be found at these stores:</h4>
   <ul>
     <% @brand.stores.each() do |store| %>
-      <li><%= store.name() %></li>
+      <li><a href='/stores/<%= store.id() %>'><%= store.name() %></a></li>
     <% end %>
   </ul>
 <% else %>

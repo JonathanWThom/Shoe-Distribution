@@ -4,7 +4,7 @@
   <h3>Current Brands Available</h3>
   <ul>
     <% @store.brands.each() do |brand| %>
-      <li><%= brand.name() %></li>
+      <li><a href='/brands/<%= brand.id() %>'><%= brand.name() %></a></li>
     <% end %>
   </ul>
 <% else %>
