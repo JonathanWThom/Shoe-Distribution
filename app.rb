@@ -11,8 +11,12 @@ get('/') do
 end
 
 post('/stores') do
-  @store = Store.create(:name => params['store_name'])
-  redirect('/stores/'.concat(@store.id().to_s()))
+  @store = Store.new(:name => params['store_name'])
+  if @store.save()
+    redirect('/stores/'.concat(@store.id().to_s()))
+  else
+    erb(:errors)
+  end
 end
 
 get('/stores/:id') do
@@ -44,8 +48,12 @@ delete('/stores/:id') do
 end
 
 post('/brands') do
-  @brand = Brand.create(:name => params['brand_name'])
-  redirect('/brands/'.concat(@brand.id().to_s()))
+  @brand = Brand.new(:name => params['brand_name'])
+  if @brand.save()
+    redirect('/brands/'.concat(@brand.id().to_s()))
+  else
+    erb(:errors)
+  end
 end
 
 get('/brands/:id') do
