@@ -6,7 +6,7 @@
 
 ## Description
 
-_Users can input new stores, new brands, and assign brands to stores (and vice versa). There is also functionality for updating and deleting brands and stores, as well as adding images for brands. Makes use of ActiveRecord and a many-to-many database schema._
+_Users can input new stores, new brands, and assign brands to stores (and vice versa). There is also functionality for updating and deleting brands and stores, as well as adding images for brands. Makes use of ActiveRecord and both many-to-many and one-to-many database schemas._
 
 ## Setup/Installation Requirements
 

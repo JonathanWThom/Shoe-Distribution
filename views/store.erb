@@ -28,11 +28,11 @@
   <form action="/stores/<%= @store.id() %>" method="post">
     <% @brands.each() do |brand| %>
       <% unless brand.store_ids.include?(@store.id()) %>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" name="brand_ids[]" value="<%= brand.id() %>"><%= brand.name() %>
-        </label>
-      </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="brand_ids[]" value="<%= brand.id() %>"><%= brand.name() %>
+          </label>
+        </div>
       <% end %>
     <% end %>
     <button type="submit" class="btn btn-success">Add Brand</button>
