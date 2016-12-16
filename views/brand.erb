@@ -57,7 +57,7 @@
     <h3>Brand Images</h3>
     <h5>Click to view full size</h5>
     <% @brand.links.each() do |link| %>
-      <a href='/images/<%= link.id() %>'><img style="width: 200px;" src='<%= link.link %>'></a>
+      <a href='/images/<%= link.id() %>'><img class="image" alt="brand image" style="width: 200px;" src='<%= link.link %>'></a>
     <% end %>
   <% else %>
     <h3>There are no images yet</h3>
