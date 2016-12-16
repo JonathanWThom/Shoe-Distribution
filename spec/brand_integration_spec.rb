@@ -22,4 +22,12 @@ describe('The brand route', {:type => :feature}) do
     click_button('Rebrand')
     expect(page).to have_content('Adidas')
   end
+
+  it ('will add a store that the brand can be found in') do
+    brand = Brand.create(:name => 'nike')
+    store = Store.create(:name => 'outlet mall')
+    visit("/brands/#{brand.id()}")
+    check('Outlet Mall')
+    expect(page).to have_content('Outlet Mall')
+  end
 end
