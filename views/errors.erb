@@ -1,14 +1,17 @@
-<% if @store %>
-  <ul>
-    <% @store.errors().full_messages().each() do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
-<% if @brand %>
-  <ul>
-    <% @brand.errors().full_messages().each() do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+<h2 id="error">Whoops!</h2>
+<div class='well'>
+  <% if @store %>
+    <ul>
+      <% @store.errors().full_messages().each() do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <% if @brand %>
+    <ul>
+      <% @brand.errors().full_messages().each() do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

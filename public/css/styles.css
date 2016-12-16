@@ -5,3 +5,8 @@ body {
 h1 {
   text-align: center;
 }
+
+#error {
+  text-align: center;
+  color: red;
+}
