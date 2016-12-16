@@ -31,4 +31,11 @@ describe('The shoe store route', {:type => :feature}) do
     click_button('Add Brand')
     expect(page).to have_content('Nike')
   end
+
+  it('will delete a store') do
+    store = Store.create(:name => 'outlet mall')
+    visit("/stores/#{store.id()}")
+    click_button('Delete Store')
+    expect(page).to_not have_content('Outlet Mall')
+  end
 end
