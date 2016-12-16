@@ -37,4 +37,12 @@ describe('The brand route', {:type => :feature}) do
     click_button('Delete')
     expect(page).to_not have_content('Nike')
   end
+
+  it('will add and display an linked image') do
+    brand = Brand.create(:name => 'nike')
+    visit("/brands/#{brand.id()}")
+    fill_in('link', :with => 'test-image.com/images/shoes.jpg')
+    click_button('Add Image Link')
+    expect(page).to_not have_content('There are no images yet')
+  end
 end
