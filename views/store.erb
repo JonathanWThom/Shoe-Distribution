@@ -1,1 +1,10 @@
-<%= @store.name() %>
+<h2><%= @store.name() %></h2>
+
+<h3>Change Store Name</h3>
+<form action="/stores/<%= @store.id() %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <div class="form-group">
+    <input id="new_name" name="new_name" placeholder="New Name">
+  </div>
+  <button type="submit" class="btn btn-info">Change Name</button>
+</form>

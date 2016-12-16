@@ -5,6 +5,7 @@ require('pry')
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 get('/') do
+  @stores = Store.all()
   erb(:index)
 end
 
@@ -15,5 +16,11 @@ end
 
 get('/stores/:id') do
   @store = Store.find(params['id'].to_i)
+  erb(:store)
+end
+
+patch('/stores/:id') do
+  @store = Store.find(params['id'].to_i)
+  @store.update(:name => params['new_name'])
   erb(:store)
 end
