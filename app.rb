@@ -61,8 +61,21 @@ post('/brands') do
 end
 
 get('/brands/:id') do
+  @stores = Store.all()
   @brand = Brand.find(params['id'].to_i)
   erb(:brand)
+end
+
+post('/brands/:id') do
+  @brand = Brand.find(params['id'].to_i)
+  store_ids = params['store_ids']
+  if store_ids
+    store_ids.each() do |store_id|
+      store = Store.find(store_id)
+      @brand.stores.push(store)
+    end
+  end
+  redirect('/brands/'.concat(@brand.id().to_s()))
 end
 
 patch('/brands/:id') do

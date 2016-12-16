@@ -1,7 +1,7 @@
 <h2><%= @brand.name() %></h2>
 
 <% if @brand.stores.any?() %>
-  <h4>Can be found at these stores:</h4>
+  <h3>Can be found at these stores:</h3>
   <ul>
     <% @brand.stores.each() do |store| %>
       <li><a href='/stores/<%= store.id() %>'><%= store.name() %></a></li>
@@ -10,6 +10,20 @@
 <% else %>
   <h4>This brand is not in any stores yet!</h4>
 <% end %>
+
+<h3>Add a Store to this Brand's Distribution Network</h3>
+<form action="/brands/<%= @brand.id() %>" method="post">
+  <% @stores.each() do |store| %>
+    <% unless store.brand_ids.include?(@brand.id()) %>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="store_ids[]" value="<%= store.id() %>"><%= store.name() %>
+      </label>
+    </div>
+    <% end %>
+  <% end %>
+  <button type="submit" class="btn btn-success">Add Store</button>
+</form>
 
 <h3>Update Brand Name</h3>
 <form action="/brands/<%= @brand.id() %>" method="post">
