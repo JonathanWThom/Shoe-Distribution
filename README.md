@@ -6,13 +6,13 @@
 
 ## Description
 
-_Users can input new stores, new brands, and assign brands to stores (and vice versa). There is also functionality for updating and deleting brands and stores_
+_Users can input new stores, new brands, and assign brands to stores (and vice versa). There is also functionality for updating and deleting brands and stores. Makes use of ActiveRecord and a many-to-many database schema._
 
 ## Setup/Installation Requirements
 
 * _In the command line, run:_
 ```
-$ postgres
+postgres
 ```
 * _Then, in another window:_
 ```
@@ -36,7 +36,7 @@ localhost:4567
   * Output: "Payless"
 
 2. User can change a shoe store name
-  * Input example: "costco"; Click("Change Name")
+  * Input example: (On Payles page) "costco"; Click("Change Name")
   * Output: "Costco"
 
 3. User can add and view a shoe brand page, name will be titleized.
@@ -48,8 +48,8 @@ localhost:4567
   * Output: "Adidas"
 
 5. User can add a shoe brand to a store
-  * Input example: Check("Nike"); Click("Add Brand")
-  * Output: "Current Brands Available: Nike."
+  * Input example: Check("Adidas"); Click("Add Brand")
+  * Output: "Current Brands Available: Adidas."
 
 6. User can add a store to a brand
   * Input example: Check("Costco"); Click("Add Brand")
@@ -63,7 +63,7 @@ localhost:4567
   * Input example: "Nike"; Click("Delete Brand")
   * Output: (Return to Homepage, Nike not listed)
 
-9. Each Brand can be featured in multiple stores, each store can carry multiple brands.
+9. Each brand can be featured in multiple stores, each store can carry multiple brands.
 
 ## Support and contact details
 
