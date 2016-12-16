@@ -28,17 +28,21 @@ end
 post('/stores/:id') do
   @store = Store.find(params['id'].to_i)
   brand_ids = params['brand_ids']
-  brand_ids.each() do |brand_id|
-    brand = Brand.find(brand_id)
-    @store.brands.push(brand)
+  if brand_ids
+    brand_ids.each() do |brand_id|
+      brand = Brand.find(brand_id)
+      @store.brands.push(brand)
+    end
   end
   redirect('/stores/'.concat(@store.id().to_s()))
 end
 
 patch('/stores/:id') do
   @store = Store.find(params['id'].to_i)
-  @store.update(:name => params['new_name'])
-  erb(:store)
+  if params['new_name']
+    @store.update(:name => params['new_name'])
+  end
+  redirect('/stores/'.concat(@store.id().to_s()))
 end
 
 delete('/stores/:id') do
@@ -63,7 +67,9 @@ end
 
 patch('/brands/:id') do
   @brand = Brand.find(params['id'].to_i)
-  @brand.update(:name => params['brand_name'])
+  if params['brand_name']
+    @brand.update(:name => params['brand_name'])
+  end
   redirect('/brands/'.concat(@brand.id().to_s()))
 end
 
