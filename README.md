@@ -6,7 +6,7 @@
 
 ## Description
 
-_Users can input new stores, new brands, and assign brands to stores (and vice versa). There is also functionality for updating and deleting brands and stores. Makes use of ActiveRecord and a many-to-many database schema._
+_Users can input new stores, new brands, and assign brands to stores (and vice versa). There is also functionality for updating and deleting brands and stores, as well as adding images for brands. Makes use of ActiveRecord and a many-to-many database schema._
 
 ## Setup/Installation Requirements
 
@@ -55,15 +55,19 @@ localhost:4567
   * Input example: Check("Costco"); Click("Add Brand")
   * Output: "Can be found at these stores: Costco"
 
-7. User can delete a store
+7. User can add a link to an image for a brand
+  * Input example: "test-image.com/images/image.jpg"
+  * Output: (Image shown on page)
+
+8. User can delete a store
   * Input example: "Costco"; Click("Delete Store")
   * Output: (Return to Homepage, Costco not listed)
 
-8. User can delete a brand
+9. User can delete a brand
   * Input example: "Nike"; Click("Delete Brand")
   * Output: (Return to Homepage, Nike not listed)
 
-9. Each brand can be featured in multiple stores, each store can carry multiple brands.
+10. Each brand can be featured in multiple stores, each store can carry multiple brands.
 
 ## Support and contact details
 
