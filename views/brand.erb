@@ -10,3 +10,12 @@
 <% else %>
   <h4>This brand is not in any stores yet!</h4>
 <% end %>
+
+<h3>Update Brand Name</h3>
+<form action="/brands/<%= @brand.id() %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <div class="form-group">
+    <input id="brand_name" name="brand_name" placeholder="New Brand Name">
+  </div>
+  <button type="submit" class="btn btn-info">Rebrand</button>
+</form>
