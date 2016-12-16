@@ -54,5 +54,11 @@ describe('The brand route', {:type => :feature}) do
     expect(page).to have_content('Delete Image')
   end
 
+  it('will allow user to delete an image') do
+    image = Link.create(:link => 'test-image.com/images/shoes.jpg')
+    visit("/images/#{image.id()}")
+    click_button("Delete Image")
+    expect(page).to_not have_content('image')
+  end
 
 end
