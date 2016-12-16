@@ -32,42 +32,46 @@ localhost:4567
 
 ## Specifications
 1. User can add and view a shoe store page, name will be titleized.
-  * Input example: "payless"
+  * Input: "payless"
   * Output: "Payless"
 
 2. User can change a shoe store name
-  * Input example: (On Payles page) "costco"; Click("Change Name")
+  * Input: (On Payles page) "costco"; Click("Change Name")
   * Output: "Costco"
 
 3. User can add and view a shoe brand page, name will be titleized.
-  * Input example: "nike"
+  * Input: "nike"
   * Output: "Nike"
 
 4. User can change a shoe brand name
-  * Input example: (On Nike Page) "adidas"; Click("Change Name")
+  * Input: (On Nike Page) "adidas"; Click("Change Name")
   * Output: "Adidas"
 
 5. User can add a shoe brand to a store
-  * Input example: Check("Adidas"); Click("Add Brand")
+  * Input: Check("Adidas"); Click("Add Brand")
   * Output: "Current Brands Available: Adidas."
 
 6. User can add a store to a brand
-  * Input example: Check("Costco"); Click("Add Brand")
+  * Input: Check("Costco"); Click("Add Brand")
   * Output: "Can be found at these stores: Costco"
 
 7. User can add a link to an image for a brand
-  * Input example: "test-image.com/images/image.jpg"
+  * Input: "test-image.com/images/image.jpg"
   * Output: (Image shown on page)
 
-8. User can delete a store
-  * Input example: "Costco"; Click("Delete Store")
+8. User can click to see full sized image, then delete it.
+  * Input: Click("Image"), Click("Delete Image")
+  * Output: "There are no images yet"
+
+9. User can delete a store
+  * Input: "Costco"; Click("Delete Store")
   * Output: (Return to Homepage, Costco not listed)
 
-9. User can delete a brand
-  * Input example: "Nike"; Click("Delete Brand")
+10. User can delete a brand
+  * Input: "Nike"; Click("Delete Brand")
   * Output: (Return to Homepage, Nike not listed)
 
-10. Each brand can be featured in multiple stores, each store can carry multiple brands.
+11. Each brand can be featured in multiple stores, each store can carry multiple brands.
 
 ## Support and contact details
 
