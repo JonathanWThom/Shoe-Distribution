@@ -24,3 +24,9 @@ patch('/stores/:id') do
   @store.update(:name => params['new_name'])
   erb(:store)
 end
+
+delete('/stores/:id') do
+  @store = Store.find(params['id'].to_i)
+  @store.destroy()
+  redirect('/')
+end

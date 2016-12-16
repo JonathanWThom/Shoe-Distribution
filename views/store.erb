@@ -8,3 +8,9 @@
   </div>
   <button type="submit" class="btn btn-info">Change Name</button>
 </form>
+
+<h3>Delete Store</h3>
+<form action="/stores/<%= @store.id() %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" class="btn btn-danger">Delete Store</button>
+</form>
