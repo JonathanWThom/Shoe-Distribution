@@ -7,4 +7,11 @@ describe('The shoe store route', {:type => :feature}) do
     click_button('Add Store')
     expect(page).to have_content('Payless Shoestore')
   end
+
+  it('will not allow a user to enter a blank store name') do
+    visit('/')
+    fill_in('store_name', :with => '')
+    click_button('Add Store')
+    expect(page).to have_content('Name can\'t be blank')
+  end
 end
