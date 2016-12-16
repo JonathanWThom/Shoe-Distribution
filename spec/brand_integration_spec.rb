@@ -23,11 +23,18 @@ describe('The brand route', {:type => :feature}) do
     expect(page).to have_content('Adidas')
   end
 
-  it ('will add a store that the brand can be found in') do
+  it('will add a store that the brand can be found in') do
     brand = Brand.create(:name => 'nike')
     store = Store.create(:name => 'outlet mall')
     visit("/brands/#{brand.id()}")
     check('Outlet Mall')
     expect(page).to have_content('Outlet Mall')
+  end
+
+  it('will delete a store') do
+    brand = Brand.create(:name => 'nike')
+    visit("/brands/#{brand.id()}")
+    click_button('Delete')
+    expect(page).to_not have_content('Nike')
   end
 end
