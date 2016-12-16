@@ -1,1 +1,12 @@
-<%= @brand.name() %>
+<h2><%= @brand.name() %></h2>
+
+<% if @brand.stores.any?() %>
+  <h4>Can be found at these stores:</h4>
+  <ul>
+    <% @brand.stores.each() do |store| %>
+      <li><%= store.name() %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <h4>This brand is not in any stores yet!</h4>
+<% end %>
