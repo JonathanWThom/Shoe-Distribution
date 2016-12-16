@@ -71,7 +71,7 @@ _Contact Jonathan at: jonathan.thom1990@gmail.com_
 
 ## Technologies Used
 
-_Ruby, Sinatra, ActiveRecord, HTML, Bootstrap_
+_Ruby, Sinatra, ActiveRecord, HTML, CSS, Bootstrap_
 
 ### License
 

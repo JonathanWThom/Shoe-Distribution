@@ -1,4 +1,17 @@
-<h2><%= @store.name() %></h2>
+<!--I did this here because the css from the stylesheet doesn't apply itself to urls with unique ids-->
+<head>
+  <style>
+    body {
+        background-color: black;
+    }
+
+    h1 {
+        text-align: center;
+    }
+  </style>
+</head>
+
+<h2 style="color:red; text-align: center;"><%= @store.name() %></h2>
 
 <div class="well">
   <% if @store.brands.any?() %>
